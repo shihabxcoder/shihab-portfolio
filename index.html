@@ -4,49 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shihab | Android Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #121212; color: #e0e0e0; line-height: 1.6; }
-        header { background: linear-gradient(135deg, #1f1c2c, #928dab); padding: 60px 20px; text-align: center; }
-        h1 { margin: 0; font-size: 2.5rem; color: #fff; }
-        p.subtitle { font-size: 1.2rem; color: #ddd; margin-top: 10px; }
-        .container { max-width: 800px; margin: auto; padding: 20px; }
-        .card { background: #1e1e1e; padding: 20px; margin: 20px 0; border-radius: 10px; border-left: 5px solid #03dac6; }
-        h2 { color: #03dac6; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        .btn { display: inline-block; padding: 10px 20px; background: #bb86fc; color: #000; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px; }
-        .btn:hover { background: #03dac6; }
-        footer { text-align: center; padding: 20px; font-size: 0.9rem; color: #777; margin-top: 40px; }
+        /* বেসিক স্টাইল */
+        :root { --primary: #00E676; --bg: #0f172a; --card-bg: #1e293b; --text: #e2e8f0; }
+        body { margin: 0; font-family: 'Poppins', sans-serif; background-color: var(--bg); color: var(--text); overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        
+        /* হেডার সেকশন */
+        header { 
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); 
+            padding: 100px 20px; text-align: center; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px;
+        }
+        .profile-img {
+            width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary);
+            margin-bottom: 20px; box-shadow: 0 0 20px rgba(0, 230, 118, 0.4);
+        }
+        h1 { margin: 10px 0; font-size: 2.5rem; }
+        .tagline { color: var(--primary); font-weight: 600; letter-spacing: 1px; }
+        
+        /* সোশ্যাল আইকন */
+        .social-links { margin-top: 20px; }
+        .social-links a {
+            display: inline-block; width: 40px; height: 40px; line-height: 40px; background: rgba(255,255,255,0.1);
+            border-radius: 50%; margin: 0 10px; transition: 0.3s; color: #fff;
+        }
+        .social-links a:hover { background: var(--primary); color: #000; transform: translateY(-5px); }
+
+        /* মেইন কন্টেইনার */
+        .container { max-width: 900px; margin: auto; padding: 40px 20px; }
+        
+        /* স্কিল সেকশন */
+        .skills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 40px; }
+        .skill-tag { 
+            background: var(--card-bg); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; border: 1px solid #334155;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .skill-tag i { color: var(--primary); }
+
+        /* প্রোজেক্ট কার্ড */
+        .section-title { border-left: 5px solid var(--primary); padding-left: 15px; margin-bottom: 20px; }
+        .project-card {
+            background: var(--card-bg); border-radius: 15px; padding: 25px; margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3); transition: 0.3s; display: flex; flex-wrap: wrap; align-items: center; gap: 20px;
+        }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 230, 118, 0.1); }
+        .app-icon { width: 80px; height: 80px; background: #333; border-radius: 15px; object-fit: cover; }
+        .project-info { flex: 1; }
+        .btn {
+            display: inline-block; padding: 10px 20px; background: var(--primary); color: #000; 
+            border-radius: 8px; font-weight: 600; margin-top: 15px; transition: 0.3s;
+        }
+        .btn:hover { background: #fff; }
+        .tech-used { font-size: 0.8rem; color: #94a3b8; margin-top: 5px; }
+
+        /* ফুটার */
+        footer { text-align: center; padding: 40px; color: #64748b; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Hi, I'm Shihab</h1>
-    <p class="subtitle">Android App Developer | Kotlin & XML Expert</p>
+    <img src="https://cdn-icons-png.flaticon.com/512/4140/4140048.png" alt="Profile" class="profile-img">
+    <h1>Shihab</h1>
+    <p class="tagline">ANDROID APPLICATION DEVELOPER</p>
+    
+    <div class="social-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i></a>
+    </div>
 </header>
 
 <div class="container">
-    <div class="card">
-        <h2>About Me</h2>
-        <p>I am a passionate Android Developer specializing in building modern mobile applications. I love creating tools that help users design and create simply.</p>
-        <p><strong>Tech Stack:</strong> AndroidIDE, Sketchware Pro, Kotlin, XML, UI/UX Design.</p>
+    
+    <div class="skills">
+        <span class="skill-tag"><i class="fab fa-android"></i> Android Development</span>
+        <span class="skill-tag"><i class="fas fa-code"></i> Kotlin & XML</span>
+        <span class="skill-tag"><i class="fas fa-mobile-alt"></i> AndroidIDE</span>
+        <span class="skill-tag"><i class="fas fa-cubes"></i> Sketchware Pro</span>
+        <span class="skill-tag"><i class="fas fa-paint-brush"></i> UI/UX Design</span>
     </div>
 
-    <div class="card">
-        <h2>Featured Project</h2>
-        <h3>📱 eFootball Card Maker (eFCardify)</h3>
-        <p>A powerful tool for football fans to create custom player cards. Features include background removal, custom designs, and high-quality image generation.</p>
-        <a href="#" class="btn">View Project</a>
+    <h2 class="section-title">Featured Projects</h2>
+    
+    <div class="project-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1165/1165249.png" alt="App Icon" class="app-icon">
+        
+        <div class="project-info">
+            <h3>eFootball Card Maker (eFCardify)</h3>
+            <p class="tech-used">Built with: Kotlin, XML, API Integration</p>
+            <p>A powerful tool for football fans to create custom player cards. Features include AI background removal, custom designs, and high-quality image generation.</p>
+            
+            <a href="#" class="btn"><i class="fab fa-google-play"></i> Download App</a>
+        </div>
     </div>
 
-    <div class="card">
-        <h2>Contact</h2>
-        <p>Want to discuss a project or just say hi?</p>
-        <a href="mailto:your-email@example.com" class="btn">Email Me</a>
+    <h2 class="section-title">Contact Me</h2>
+    <div class="project-card" style="text-align: center; display: block;">
+        <p>Have an idea or need an app? Let's build something amazing together.</p>
+        <a href="mailto:your-email@example.com" class="btn">Hire Me</a>
     </div>
+
 </div>
 
 <footer>
-    <p>&copy; 2026 Shihab. All rights reserved.</p>
+    <p>&copy; 2026 Shihab. Built with passion in Bangladesh.</p>
+    <p><a href="#">Privacy Policy</a></p>
 </footer>
 
 </body>
